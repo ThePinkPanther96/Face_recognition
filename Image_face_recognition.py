@@ -1,11 +1,11 @@
 import cv2
 import matplotlib.pyplot as plt
 
-imagePath = 'kusay.jpg'
+imagePath = 'photo.jpg'
 
 #Reads the image as Color Image (By fefault as BGR not RGB)
 img = cv2.imread(imagePath)
-settings = ["haarcascade_frontalface_default.xml","haarcascade_profileface.xml","haarcascade_lefteye_2splits.xml"]
+settings = ["haarcascade_frontalface_default.xml","haarcascade_profileface.xml","haarcascade_eye_tree_eyeglasses.xml"]
 
 # Convert to Gray Image for better computation efficiancy
 gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
