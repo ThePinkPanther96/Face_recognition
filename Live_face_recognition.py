@@ -1,6 +1,6 @@
 import cv2
 
-haarcascade = ["haarcascade_frontalface_default.xml","haarcascade_profileface.xml"]
+haarcascade = ["haarcascade_frontalface_default.xml","haarcascade_profileface.xml","haarcascade_eye.xml"]
 
 video_capture = cv2.VideoCapture(0)
 
@@ -10,7 +10,7 @@ def detect_bounding_box(vid,alg):
         cv2.data.haarcascades + i)
         
         gray_image = cv2.cvtColor(vid, cv2.COLOR_BGR2GRAY)
-        faces = face_classifier.detectMultiScale(gray_image, 1.1, 5, minSize=(30, 30))
+        faces = face_classifier.detectMultiScale(gray_image, 1.1, 5, minSize=(40, 40))
         
         for (x, y, w, h) in faces:
             cv2.rectangle(vid, (x, y), (x + w, y + h), (0, 255, 0), 2)
